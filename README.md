@@ -1,4 +1,4 @@
-# Kjdb
+# 一个基于Angular的简易前台页面框架
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 

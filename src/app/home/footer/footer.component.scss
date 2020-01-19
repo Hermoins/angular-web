@@ -1,0 +1,20 @@
+.footer {
+    background: #263238;
+    color: #80cbc4;
+    line-height: 36px;
+    padding: 0 20px;
+    font-size: 12px;
+  
+    a {
+      color: #80cbc4;
+      cursor: pointer;
+    }
+    &-copyright{
+      display: flex;
+      align-items:center;
+      justify-content: space-between;
+    }
+  }
+
+
+  

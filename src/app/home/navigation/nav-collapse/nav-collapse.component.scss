@@ -1,0 +1,47 @@
+  .navigation-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    text-decoration: none;
+    padding: 0 24px;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    color: currentColor;
+    &-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      margin-right: 16px;
+    }
+    &-title {
+      flex: 1;
+      white-space: nowrap;
+      padding: 0 24px;
+    }
+    
+  }
+  
+  .navigation-children {
+    background: rgba(0, 0, 0, 0.12);
+      color: rgba(255, 255, 255, 0.65);
+      overflow: hidden;
+  }
+  .navclose {
+      font-size: 20px;
+      width: 16px;
+      height: 16px;
+      transition: transform 0.25s;
+      transform: rotate(0);
+    }
+  .navopen {
+      font-size: 20px;
+      width: 16px;
+      height: 16px;
+      transition: transform 0.25s;
+      transform: rotate(90deg);
+    }
+  
+    
+  

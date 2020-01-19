@@ -1,0 +1,33 @@
+
+.main-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 100px);
+}
+
+.sidenav-container {
+  width: 250px;
+  max-width: 250px;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.right-container {
+  overflow: hidden; 
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+
+.customizer {
+  background-color: white;
+}
+::ng-deep .mat-drawer-inner-container{
+  overflow: hidden;
+}
+
+.mat-drawer-side{
+  border: none;
+}
+

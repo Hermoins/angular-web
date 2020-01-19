@@ -1,0 +1,55 @@
+<div class="customizer-container" fxLayout="column">
+    <div class="m-t-10">header</div>
+    <mat-radio-group class="customizer-radio-group"  [(ngModel)]="color.headerColor" (change)="themesChange()">
+      <mat-radio-button class="customizer-radio-button" *ngFor="let color of _colors" [value]="color">{{color}}
+      </mat-radio-button>
+    </mat-radio-group>
+  
+    <div class="m-t-10">brand</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="color.brandColor" (change)="themesChange()">
+      <mat-radio-button class="customizer-radio-button" *ngFor="let color of _colors" [value]="color">{{color}}
+      </mat-radio-button>
+    </mat-radio-group>
+  
+    <div class="m-t-10">navigation</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="color.navigationColor" (change)="themesChange()">
+      <mat-radio-button class="customizer-radio-button" *ngFor="let color of _colors" [value]="color">{{color}}
+      </mat-radio-button>
+    </mat-radio-group>
+  
+    <!-- <div class="m-t-10">{{'settings.layout.title'}}</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="settings.layout.mode"
+      fxLayout="row">
+      <mat-radio-button class="customizer-radio-button" value="boxed">{{'settings.layout.boxed'}}</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="fullwidth">{{'settings.layout.fullwidth'}}</mat-radio-button>
+    </mat-radio-group> -->
+  
+    <!-- <div class="m-t-10">{{'settings.navigation.title'}}</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="settings.layout.navigation"
+      fxLayout="row">
+      <mat-radio-button class="customizer-radio-button" value="left">{{'settings.navigation.left'}}</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="right">{{'settings.navigation.right'}}</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="none">{{'settings.navigation.none'}}</mat-radio-button>
+    </mat-radio-group> -->
+  
+    <div class="m-t-10">headerLayout</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="layout.headerLayout" (change)="layoutChange()"
+      fxLayout="row">
+      <mat-radio-button class="customizer-radio-button" value="show">show</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="hidden">hidden</mat-radio-button>
+    </mat-radio-group>
+    <div class="m-t-10">footerLayout</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="layout.footerLayout" (change)="layoutChange()"
+      fxLayout="row">
+      <mat-radio-button class="customizer-radio-button" value="show">show</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="hidden">hidden</mat-radio-button>
+    </mat-radio-group>
+  
+    <!-- <div class="m-t-10">{{'settings.footer.title'}}</div>
+    <mat-radio-group class="customizer-radio-group" [(ngModel)]="settings.layout.footer"
+      fxLayout="row">
+      <mat-radio-button class="customizer-radio-button" value="below">{{'settings.footer.below'}}</mat-radio-button>
+      <mat-radio-button class="customizer-radio-button" value="none">{{'settings.footer.none'}}</mat-radio-button>
+    </mat-radio-group> -->
+  
+  </div>

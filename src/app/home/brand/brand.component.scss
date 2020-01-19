@@ -1,0 +1,26 @@
+:host{
+    display: block;
+}
+
+.brand {
+    position: relative;
+    width: 250px;
+    height: 64px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: seagreen;
+} 
+.icon {
+  color:azure
+}
+.label {
+  margin-right: 100px;
+  font-weight:bold;
+  align-items: center;
+  font-size: 25px;
+  font-style:italic;
+  color:antiquewhite
+}

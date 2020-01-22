@@ -3,16 +3,16 @@ export class NavigationModel {
   
     constructor() {
       this.model = [
-        {
-          id: 'home',
-          title: '主页',
-          type: 'item',
-          icon: 'home',
-          url: '/home'
-        },
+        // {
+        //   id: 'home',
+        //   title: '主页',
+        //   type: 'item',
+        //   icon: 'home',
+        //   url: '/home'
+        // },
         {
           id: 'kjdb',
-          title: '组件',
+          title: 'Component',
           type: 'collapse',
           icon: 'bubble_chart',
           children: [
@@ -38,7 +38,7 @@ export class NavigationModel {
         },
         {
           id: 'bsdb',
-          title: '图表',
+          title: 'Chart',
           type: 'collapse',
           icon: 'equalizer',
           children: [

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavigationAnimation } from '../navigation.animation';
+import { ThemesService } from '../../customizer/customizer.service';
 
 @Component({
   selector: 'app-nav-collapse',
@@ -11,12 +12,23 @@ export class NavCollapseComponent implements OnInit {
   @Input()
   item: any;
   public isOpen = true;
-  constructor() { }
+  color: any;
+  constructor(private themesStatus: ThemesService) { }
 
   ngOnInit() {
+    this.themesStatus.get().subscribe((result) => {
+      this.color = result;
+    })
+    if (this.color === null || this.color === undefined) {
+      const storage = window.localStorage;
+      if (storage.themes === 'light') {
+        this.color = '#58B2DC'
+      } else {
+        this.color = '#fff'
+      }
+    }
   }
   toggleOpen(e) {
-    // e.preventDefault();
     e.stopPropagation();
     this.isOpen = !this.isOpen
   }

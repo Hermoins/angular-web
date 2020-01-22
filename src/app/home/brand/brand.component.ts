@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BrandComponent implements OnInit {
 
   constructor() { }
-  @Input() brand: string = 'Stbui';
+  @Input() brand: string = '';
   @Input() color: string;
   ngOnInit() {
   }

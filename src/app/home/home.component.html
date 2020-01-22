@@ -1,7 +1,7 @@
 <mat-sidenav-container class="container">
 
     <mat-sidenav class="customizer" [position]="customizerSidenavAlign" mode="over" #customizer>
-        <app-customizer [settings]="settings" (changelayout)="changelayout($event)"
+        <app-customizer (changelayout)="changelayout($event)"
             (changethemes)="changethemes($event)"></app-customizer>
     </mat-sidenav>
 
@@ -12,7 +12,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="right-container" fxLayout="column">
-        <app-header class="header" *ngIf="headerLayout == 'show'" [sidenav]="sidenav" [customizer]="customizer"
+        <app-header class="header" [sidenav]="sidenav" [customizer]="customizer"
             [color]="headerColor">
         </app-header>
         <div class="main-container" #scrollContainer>

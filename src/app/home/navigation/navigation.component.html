@@ -1,8 +1,9 @@
-<div class="navigation-container" [ngStyle]="{'background-color':color}">
+<div class="navigation-container" [ngStyle]="{'background':color}">
     <div class="navigation-scrollbar-container">
         <ng-container *ngFor="let navigation of navigationModel">
             <app-nav-collapse *ngIf="navigation.type == 'collapse'" [item]="navigation"></app-nav-collapse>
-            <app-nav-item *ngIf="navigation.type=='item'" [item]="navigation"></app-nav-item>
-          </ng-container>
+            <app-nav-item *ngIf="navigation.type=='item'" [item]="navigation">
+            </app-nav-item>
+        </ng-container>
     </div>
-    </div>
+</div>

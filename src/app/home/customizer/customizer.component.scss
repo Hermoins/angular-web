@@ -1,7 +1,8 @@
 .customizer {
     &-container {
       width: 250px;
-      padding: 10px;
+      height: 100%;
+      padding: 15px;
     }
   
     &-radio-group {
@@ -13,4 +14,6 @@
       margin: 5px;
     }
   }
-  
+  h3{
+    border-bottom: 1px solid #cccccc;
+  }

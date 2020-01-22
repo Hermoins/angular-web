@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ThemesService } from '../../customizer/customizer.service';
 
 @Component({
   selector: 'app-nav-item',
@@ -7,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavItemComponent implements OnInit {
   @Input() item: any;
-  constructor() { }
+  themes: any;
+  constructor(private themesStatus:ThemesService) {
+  }
 
   ngOnInit() {
+   
   }
+
 
 }

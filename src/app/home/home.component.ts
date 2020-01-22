@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from './navigation/navigation.model';
+import { ThemesService } from './customizer/customizer.service';
 
 @Component({
   selector: 'app-home',
@@ -19,17 +20,17 @@ export class HomeComponent implements OnInit {
   headerColor: string = '';
   brandColor: string = '';
   navcolor: string ='';
+  active: string ='';
   footerLayout = 'show'
-  headerLayout= 'show'
 
-  constructor(private na:NavigationModel) { }
+  constructor(private na:NavigationModel,private themes: ThemesService) { }
 
   ngOnInit() {
     this.navigationModel = this.na.model;
     this.sidenavOpen = true
   }
 
-  onActivate(event, scrollContainer) {
+  onActivate(scrollContainer) {
     scrollContainer.scrollTop = 0;
   }
   clickhandler(){
@@ -42,7 +43,6 @@ export class HomeComponent implements OnInit {
   }
 
   changelayout(event){
-    this.headerLayout = event.headerLayout;
     this.footerLayout = event.footerLayout
   }
 

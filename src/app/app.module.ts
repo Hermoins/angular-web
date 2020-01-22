@@ -28,6 +28,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { MatRippleModule } from '@angular/material/core';
 import { InputGroupComponent } from './component/input-group/input-group.component';
+import { ThemesService } from './home/customizer/customizer.service';
 
 @NgModule({
   declarations: [
@@ -65,9 +66,9 @@ import { InputGroupComponent } from './component/input-group/input-group.compone
     ToastModule,
     InputTextModule,
     ButtonModule,
-    MatRippleModule
+    MatRippleModule,
   ],
-  providers: [],
+  providers: [ThemesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

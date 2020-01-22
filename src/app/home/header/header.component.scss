@@ -1,7 +1,8 @@
 .main-toolbar {
     height: 64px;
     padding-left: 16px;
-    background-color: aquamarine;
+    background: linear-gradient(to right,#333,#194066);
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
   }
 
   .iconLayout{
@@ -15,5 +16,6 @@
     cursor: pointer;
     user-select: none;
     margin-right: 20px;
+    color: #fff;
   }
   

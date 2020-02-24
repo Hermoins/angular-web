@@ -29,6 +29,7 @@ import {ButtonModule} from 'primeng/button';
 import { MatRippleModule } from '@angular/material/core';
 import { InputGroupComponent } from './component/input-group/input-group.component';
 import { ThemesService } from './home/customizer/customizer.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ThemesService } from './home/customizer/customizer.service';
     RadarChartDemoComponent,
     InputDemoComponent,
     InputGroupComponent,
+    LoginComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

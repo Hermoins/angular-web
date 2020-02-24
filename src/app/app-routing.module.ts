@@ -10,10 +10,12 @@ import { RadarChartDemoComponent } from './chart/radar-chart-demo/radar-chart-de
 import { TableComponent } from './component/table-demo/table-demo.component';
 import { InputDemoComponent } from './component/input-demo/input-demo.component';
 import { InputGroupComponent } from './component/input-group/input-group.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: '',
     component: HomeComponent,

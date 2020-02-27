@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-table-demo',
@@ -9,7 +9,7 @@ export class TableComponent implements OnInit {
   sales: any[];
   cols: any[];
   selectedItems: any[];
-  constructor() { }
+  constructor( private el:ElementRef) { }
 
   ngOnInit() {
     this.sales = [
@@ -31,6 +31,11 @@ export class TableComponent implements OnInit {
       { field: 'lastYearProfit', header: 'lastYearProfit' },
       { field: 'thisYearProfit', header: 'thisYearProfit' }
   ];
+  console.log(this.el.nativeElement.querySelector('#input'))
+  this.el.nativeElement.querySelector('#input').addEventListener('drop',this.fun)
   }
 
+  fun(event) {
+    // event.preventDefault();
+  }
 }

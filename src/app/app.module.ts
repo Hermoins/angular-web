@@ -30,6 +30,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { InputGroupComponent } from './component/input-group/input-group.component';
 import { ThemesService } from './home/customizer/customizer.service';
 import { LoginComponent } from './login/login.component';
+import { inputDropDirective } from 'src/service/input.directive';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { LoginComponent } from './login/login.component';
     InputDemoComponent,
     InputGroupComponent,
     LoginComponent,
+    inputDropDirective
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -31,6 +31,9 @@ import { InputGroupComponent } from './component/input-group/input-group.compone
 import { ThemesService } from './home/customizer/customizer.service';
 import { LoginComponent } from './login/login.component';
 import { inputDropDirective } from 'src/service/input.directive';
+import { PanelComponent } from './component/panel/panel.component';
+import {PanelModule} from 'primeng/panel';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,8 @@ import { inputDropDirective } from 'src/service/input.directive';
     InputDemoComponent,
     InputGroupComponent,
     LoginComponent,
-    inputDropDirective
+    inputDropDirective,
+    PanelComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -71,6 +75,8 @@ import { inputDropDirective } from 'src/service/input.directive';
     InputTextModule,
     ButtonModule,
     MatRippleModule,
+    PanelModule,
+    RadioButtonModule
   ],
   providers: [ThemesService],
   bootstrap: [AppComponent]

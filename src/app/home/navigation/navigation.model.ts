@@ -34,6 +34,12 @@ export class NavigationModel {
               type: 'item',
               url: '/inputGroup'
             },
+            {
+              id: 'panel',
+              title: 'panel',
+              type: 'item',
+              url: '/panel'
+            },
           ]
         },
         {

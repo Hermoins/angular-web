@@ -11,6 +11,7 @@ import { TableComponent } from './component/table-demo/table-demo.component';
 import { InputDemoComponent } from './component/input-demo/input-demo.component';
 import { InputGroupComponent } from './component/input-group/input-group.component';
 import { LoginComponent } from './login/login.component';
+import { PanelComponent } from './component/panel/panel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -44,6 +45,9 @@ const routes: Routes = [
       },
       {
         path: 'inputGroup', component: InputGroupComponent
+      },
+      {
+        path: 'panel', component: PanelComponent
       }
     ]
   }

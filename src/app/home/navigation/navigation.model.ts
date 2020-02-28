@@ -40,6 +40,12 @@ export class NavigationModel {
               type: 'item',
               url: '/panel'
             },
+            {
+              id: 'flex',
+              title: 'flex',
+              type: 'item',
+              url: '/flex'
+            },
           ]
         },
         {

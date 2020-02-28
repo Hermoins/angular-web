@@ -12,6 +12,7 @@ import { InputDemoComponent } from './component/input-demo/input-demo.component'
 import { InputGroupComponent } from './component/input-group/input-group.component';
 import { LoginComponent } from './login/login.component';
 import { PanelComponent } from './component/panel/panel.component';
+import { FlexComponent } from './component/flex/flex.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -48,6 +49,9 @@ const routes: Routes = [
       },
       {
         path: 'panel', component: PanelComponent
+      },
+      {
+        path: 'flex', component: FlexComponent
       }
     ]
   }

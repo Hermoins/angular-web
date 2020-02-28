@@ -34,6 +34,7 @@ import { inputDropDirective } from 'src/service/input.directive';
 import { PanelComponent } from './component/panel/panel.component';
 import {PanelModule} from 'primeng/panel';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { FlexComponent } from './component/flex/flex.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     InputGroupComponent,
     LoginComponent,
     inputDropDirective,
-    PanelComponent
+    PanelComponent,
+    FlexComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

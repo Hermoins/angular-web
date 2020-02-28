@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { NavigationModel } from './navigation/navigation.model';
 import { ThemesService } from './customizer/customizer.service';
 
@@ -8,7 +8,7 @@ import { ThemesService } from './customizer/customizer.service';
   styleUrls: ['./home.component.scss'],
   providers: [NavigationModel]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit{
   navigationModel: any[];
   layoutMode: boolean = false;
 
@@ -23,15 +23,25 @@ export class HomeComponent implements OnInit {
   active: string ='';
   footerLayout = 'show'
 
-  constructor(private na:NavigationModel,private themes: ThemesService) { }
+  constructor(private na:NavigationModel,private el: ElementRef) {
+
+   }
 
   ngOnInit() {
     this.navigationModel = this.na.model;
-    this.sidenavOpen = true
+    this.sidenavOpen = true;
+    document.addEventListener('scroll', this.scrollbar.bind(this),true)
+
   }
 
-  onActivate(scrollContainer) {
-    scrollContainer.scrollTop = 0;
+  scrollbar () {
+    const h = this.el.nativeElement.querySelector('#scrollContainer').scrollTop;
+    window.localStorage.setItem('scrollTop', h)
+  }
+
+  onActivate(e,scrollContainer) {
+    console.log('dqweqeqew');
+    scrollContainer.scrollTop = window.localStorage.scrollTop
   }
   clickhandler(){
     this.sidenavOpen = false

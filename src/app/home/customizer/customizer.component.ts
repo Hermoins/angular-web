@@ -11,22 +11,17 @@ export class CustomizerComponent implements OnInit {
   @Output() changethemes = new EventEmitter();
   @Output() changelayout = new EventEmitter();
   themes: string;
-  brandColor: string;
-  navigationColor: string;
-  navigationActiveColor: string;
+
 
   layout = {
     footerLayout: 'show'
   }
 
-  color = {
+  themesColor = {
     headerColor: '',
     brandColor: '',
     navigationColor: '',
-
-
-    navigationActiveColor: ''
-
+    fontColor: '',
   }
 
   // _colors: string[] = ['dark', 'light']; 
@@ -48,23 +43,22 @@ export class CustomizerComponent implements OnInit {
   }
   themesChange() {
     if (this.themes == 'dark') {
-      this.color.headerColor = 'linear-gradient(to right,#333,#194066)';
-      this.color.brandColor = '#333';
-      this.color.navigationColor = 'linear-gradient(to bottom,#2a2b2c,85%,#194066)';
-      this.color.navigationActiveColor = 'dark';
-      this.themesStatus.send('#fff')
+      this.themesColor.headerColor = 'linear-gradient(to right,#333,#194066)';
+      this.themesColor.brandColor = '#333';
+      this.themesColor.navigationColor = 'linear-gradient(to bottom,#2a2b2c,#194066)';
+      this.themesColor.fontColor = '#fff'
+      this.themesStatus.send(this.themesColor)
       window.localStorage.setItem('themes', 'dark')
-
     } else {
-      this.color.headerColor = '#58B2DC';
-      this.color.brandColor = '#58B2DC';
-      this.color.navigationColor = '#ffffff';
-      this.color.navigationActiveColor = 'light'
-      this.themesStatus.send('#58B2DC')
+      this.themesColor.headerColor = '#58B2DC';
+      this.themesColor.brandColor = '#58B2DC';
+      this.themesColor.navigationColor = '#ffffff';
+      this.themesColor.fontColor = '#58B2DC'
+      this.themesStatus.send(this.themesColor)
       window.localStorage.setItem('themes', 'light')
     }
 
-    this.changethemes.emit(this.color)
+    // this.changethemes.emit(this.themesColor)
   }
   layoutChange() {
     this.changelayout.emit(this.layout)

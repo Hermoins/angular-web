@@ -17,7 +17,7 @@ export class NavCollapseComponent implements OnInit {
 
   ngOnInit() {
     this.themesStatus.get().subscribe((result) => {
-      this.color = result;
+      this.color = result.fontColor;
     })
     if (this.color === null || this.color === undefined) {
       const storage = window.localStorage;

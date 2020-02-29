@@ -23,14 +23,19 @@ export class HomeComponent implements OnInit{
   active: string ='';
   footerLayout = 'show'
 
-  constructor(private na:NavigationModel,private el: ElementRef) {
+  constructor(private na:NavigationModel,private el: ElementRef,private themesStatus: ThemesService) {
 
    }
 
   ngOnInit() {
     this.navigationModel = this.na.model;
     this.sidenavOpen = true;
-    document.addEventListener('scroll', this.scrollbar.bind(this),true)
+    document.addEventListener('scroll', this.scrollbar.bind(this),true);
+    this.themesStatus.get().subscribe((result) => {
+      this.headerColor = result.headerColor;
+      this.brandColor = result.brandColor;
+      this.navcolor = result.navigationColor;
+    })
 
   }
 
@@ -46,11 +51,11 @@ export class HomeComponent implements OnInit{
   clickhandler(){
     this.sidenavOpen = false
   }
-  changethemes(event) {
-    this.headerColor = event.headerColor;
-    this.brandColor = event.brandColor;
-    this.navcolor = event.navigationColor;
-  }
+  // changethemes(event) {
+  //   this.headerColor = event.headerColor;
+  //   this.brandColor = event.brandColor;
+  //   this.navcolor = event.navigationColor;
+  // }
 
   changelayout(event){
     this.footerLayout = event.footerLayout

@@ -24,7 +24,7 @@
 .customizer {
   background-color: white;
 }
-::ng-deep .mat-drawer-inner-container{
+:host ::ng-deep .mat-drawer-inner-container{
   overflow: hidden;
 }
 

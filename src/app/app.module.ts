@@ -35,6 +35,7 @@ import { PanelComponent } from './component/panel/panel.component';
 import {PanelModule} from 'primeng/panel';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { FlexComponent } from './component/flex/flex.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { FlexComponent } from './component/flex/flex.component';
     ButtonModule,
     MatRippleModule,
     PanelModule,
-    RadioButtonModule
+    RadioButtonModule,
+    DropdownModule
   ],
   providers: [ThemesService],
   bootstrap: [AppComponent]

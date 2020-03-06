@@ -80,14 +80,16 @@ import {
         '0',
         style({
           height: '0px',
-          display: 'none'
+          // display: 'none',
+          opacity: 0
         })
       ),
       state(
         '1',
         style({
           height: '*',
-          display: 'block'
+          // display: 'block',
+          opacity: 1
         })
       ),
       transition('1 => 0', animate('300ms ease-out')),

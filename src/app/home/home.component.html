@@ -4,16 +4,16 @@
         <app-customizer (changelayout)="changelayout($event)" (changethemes)="changethemes($event)"></app-customizer>
     </mat-sidenav>
 
-    <mat-sidenav class="sidenav-container" [position]="sidenavAlign" [mode]="sidenavMode" [opened]="sidenavOpen"
+    <mat-sidenav class="sidenav-container" [position]="sidenavAlign" [mode]="sidenavMode" [(opened)]="sidenavOpen"
         #sidenav>
         <app-brand [color]="brandColor"></app-brand>
         <app-navigation [color]="navcolor" [navigationModel]="navigationModel"></app-navigation>
     </mat-sidenav>
 
-    <mat-sidenav-content class="right-container" fxLayout="column">
-        <app-header class="header" [sidenav]="sidenav" [customizer]="customizer" [color]="headerColor">
+    <mat-sidenav-content class="right-container" fxLayout="column"> 
+        <app-header class="header" [sidenav]="sidenav" [sideStatu]="sidenavOpen" [customizer]="customizer" [color]="headerColor">
         </app-header>
-        <div class="main-container" id="scrollContainer" #scrollContainer>
+        <div [ngClass]="footerLayout == 'show'? 'main-container': 'main-containerNoneFoot'" id="scrollContainer" #scrollContainer>
             <router-outlet  (activate)="onActivate($event, scrollContainer)"></router-outlet>
         </div>
         <app-footer class="footer" *ngIf="footerLayout == 'show'"> </app-footer>

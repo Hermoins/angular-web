@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit, DoCheck, OnChanges, SimpleChanges } from '@angular/core';
 import { NavigationModel } from './navigation/navigation.model';
 import { ThemesService } from './customizer/customizer.service';
 
@@ -9,11 +9,12 @@ import { ThemesService } from './customizer/customizer.service';
   providers: [NavigationModel]
 })
 export class HomeComponent implements OnInit{
+
   navigationModel: any[];
   layoutMode: boolean = false;
 
 
-  sidenavOpen: boolean = true;
+  sidenavOpen: boolean;
   sidenavMode: string = 'side';
   sidenavAlign: string = 'start';
   customizerSidenavAlign: string = 'end';
@@ -29,7 +30,8 @@ export class HomeComponent implements OnInit{
 
   ngOnInit() {
     this.navigationModel = this.na.model;
-    this.sidenavOpen = true;
+
+    this.sidenavOpen = window.localStorage.currentStatu;
     document.addEventListener('scroll', this.scrollbar.bind(this),true);
     this.themesStatus.get().subscribe((result) => {
       this.headerColor = result.headerColor;
@@ -45,12 +47,11 @@ export class HomeComponent implements OnInit{
   }
 
   onActivate(e,scrollContainer) {
-    console.log('dqweqeqew');
     scrollContainer.scrollTop = window.localStorage.scrollTop
   }
-  clickhandler(){
-    this.sidenavOpen = false
-  }
+  // clickhandler(){
+  //   this.sidenavOpen = false
+  // }
   // changethemes(event) {
   //   this.headerColor = event.headerColor;
   //   this.brandColor = event.brandColor;

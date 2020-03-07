@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { NavigationAnimation } from '../navigation.animation';
 import { ThemesService } from '../../customizer/customizer.service';
@@ -11,9 +12,9 @@ import { ThemesService } from '../../customizer/customizer.service';
 export class NavCollapseComponent implements OnInit {
   @Input()
   item: any;
-  public isOpen = true;
+  public isOpen = false;
   color: any;
-  constructor(private themesStatus: ThemesService) { }
+  constructor(private themesStatus: ThemesService, private router: Router) { }
 
   ngOnInit() {
     this.themesStatus.get().subscribe((result) => {
@@ -27,10 +28,48 @@ export class NavCollapseComponent implements OnInit {
         this.color = '#fff'
       }
     }
+
+    // NavItem open ? close
+    if (this.isUrlInChildern(this.item, this.router.url)) {
+      this.expand();
+    } else {
+      this.collapse();
+    }
   }
   toggleOpen(e) {
     e.stopPropagation();
     this.isOpen = !this.isOpen
+  }
+
+  private isUrlInChildern(parent, url) {
+    if (!parent.children) {
+      return false
+    }
+    for (const item of parent.children) {
+      if (item.children) {
+        if (this.isUrlInChildern(item, url)) {
+          return true
+        }
+      }
+      if (item.url === url) {
+        return true
+      }
+    }
+  }
+
+
+  expand() {
+    if (this.isOpen) {
+      return;
+    }
+    this.isOpen = true;
+  }
+
+  collapse() {
+    if (!this.isOpen) {
+      return;
+    }
+    this.isOpen = false;
   }
 
 }

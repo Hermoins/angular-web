@@ -9,6 +9,7 @@ export class TableComponent implements OnInit {
   sales: any[];
   cols: any[];
   selectedItems: any[];
+  selectedCars3: any[] = [];
   constructor( private el:ElementRef) { }
 
   ngOnInit() {
@@ -37,5 +38,8 @@ export class TableComponent implements OnInit {
 
   fun(event) {
     // event.preventDefault();
+  }
+  clickhandler(){
+    this.selectedCars3.push(this.sales[0])
   }
 }

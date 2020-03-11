@@ -1,3 +1,4 @@
+import { ConfirmationService } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class InputDemoComponent implements OnInit {
   cities:Array<{name:string,code:string}>;
   selectedCity: { name: string; code: string; };
 
-  constructor() { }
+  constructor(private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.cities = [
@@ -28,4 +29,12 @@ export class InputDemoComponent implements OnInit {
   toggleDisabled() {
       this.disabled = !this.disabled;
   }
+  confirm() {
+    this.confirmationService.confirm({
+        message: 'Are you sure that you want to perform this action?',
+        accept: () => {
+            //Actual logic to perform a confirmation
+        }
+    });
+}
 }

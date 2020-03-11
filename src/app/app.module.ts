@@ -36,6 +36,8 @@ import {PanelModule} from 'primeng/panel';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { FlexComponent } from './component/flex/flex.component';
 import {DropdownModule} from 'primeng/dropdown';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -80,9 +82,10 @@ import {DropdownModule} from 'primeng/dropdown';
     MatRippleModule,
     PanelModule,
     RadioButtonModule,
-    DropdownModule
+    DropdownModule,
+    ConfirmDialogModule,
   ],
-  providers: [ThemesService],
+  providers: [ThemesService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,3 +16,9 @@
 <h3 class="first">Single</h3>
 <p-dropdown [options]="cities" [(ngModel)]="selectedCity" s optionLabel="name" [showClear]="true"></p-dropdown>
 <p>Selected City: {{selectedCity ? selectedCity.name : 'none'}}</p>
+
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"  appendTo="body"></p-confirmDialog>
+
+
+<button type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirm"></button>

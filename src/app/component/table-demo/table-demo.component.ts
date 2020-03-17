@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { filter, map, reduce, concat } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-table-demo',
@@ -10,7 +12,7 @@ export class TableComponent implements OnInit {
   cols: any[];
   selectedItems: any[];
   selectedCars3: any[] = [];
-  constructor( private el:ElementRef) { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
     this.sales = [
@@ -31,15 +33,25 @@ export class TableComponent implements OnInit {
       { field: 'thisYearSale', header: 'thisYearSale' },
       { field: 'lastYearProfit', header: 'lastYearProfit' },
       { field: 'thisYearProfit', header: 'thisYearProfit' }
-  ];
-  console.log(this.el.nativeElement.querySelector('#input'))
-  this.el.nativeElement.querySelector('#input').addEventListener('drop',this.fun)
+    ];
+    console.log(this.el.nativeElement.querySelector('#input'))
+    this.el.nativeElement.querySelector('#input').addEventListener('drop', this.fun)
   }
 
   fun(event) {
     // event.preventDefault();
   }
-  clickhandler(){
+  clickhandler() {
     this.selectedCars3.push(this.sales[0])
+  }
+
+  test() {
+    // import { filter, map } from 'rxjs/operators';
+    const squareOdd = of(1, 2, 3, 4, 5)
+      .pipe(
+        filter(n => n % 2 !== 0),
+        map(n => n * n),
+      );
+      squareOdd.subscribe((x) => console.log(x));
   }
 }

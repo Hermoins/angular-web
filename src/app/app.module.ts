@@ -38,7 +38,7 @@ import { FlexComponent } from './component/flex/flex.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
-
+import {ListboxModule} from 'primeng/listbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +84,8 @@ import {ConfirmationService} from 'primeng/api';
     RadioButtonModule,
     DropdownModule,
     ConfirmDialogModule,
+    ListboxModule
+    
   ],
   providers: [ThemesService,ConfirmationService],
   bootstrap: [AppComponent]

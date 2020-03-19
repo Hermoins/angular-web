@@ -1,10 +1,10 @@
 <h3 class="first">Basic</h3>
-<input id="input" type="text" size="30" pInputText [(ngModel)]="text"> 
+<input id="input" type="text" size="30" pInputText [(ngModel)]="text">
 <span id="text">{{text}}</span>
 
 <h3>Float Label</h3>
 <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText> 
+    <input id="float-input" type="text" size="30" pInputText>
     <label for="float-input">Username</label>
 </span>
 
@@ -18,10 +18,30 @@
 <p>Selected City: {{selectedCity ? selectedCity.name : 'none'}}</p>
 
 
-<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"  appendTo="body"></p-confirmDialog>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" appendTo="body"></p-confirmDialog>
 
 
 <button type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirm"></button>
-<h3>test1</h3>
-<h3>test2</h3>
-<h3>branch:localdev</h3>
+
+<h3>Advanced (Multiple, Checkbox and Filter)</h3>
+<button id="disabled-btn" type="button" (click)="delete()" pButton label="delete"></button>
+<p-listbox [options]="cities" [(ngModel)]="selectedCities" multiple="multiple" checkbox="checkbox" filter="filter"
+    optionLabel="name">
+    <p-header>
+        Cars
+    </p-header>
+</p-listbox>
+<p>Selected Cities: <span *ngFor="let c of selectedCities" style="margin-right: 10px">{{c.name}}</span></p>
+
+
+<ul>
+    <li *ngFor = "let item of strlist">{{item}}</li>
+</ul>
+
+<button type="text" (click)="strlistclick()" pButton icon="pi pi-check" label="strlist"></button>
+<br>
+<ul>
+    <li *ngFor = "let item of objlist">{{item.name}}</li>
+</ul>
+
+<button type="text" (click)="objlistclick()" pButton icon="pi pi-check" label="objlist"></button>

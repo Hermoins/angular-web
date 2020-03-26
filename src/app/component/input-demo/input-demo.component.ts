@@ -7,7 +7,7 @@ import { Component, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
   styleUrls: ['./input-demo.component.scss']
 })
 export class InputDemoComponent implements OnInit {
-  cities: Array<{ name: string, code: string }>;
+  cities = [];
   selectedCity: { name: string; code: string; };
   selectedCities = []
   strlist: any[];
@@ -45,9 +45,10 @@ export class InputDemoComponent implements OnInit {
     //   arr.push(item)
     //  }
     // })
-    console.log(this.selectedCities[0])
 
-    this.cities.splice(this.cities.indexOf(this.selectedCities[0]), 1)
+    this.cities.splice(this.cities.findIndex((item) => { return item ===this.selectedCities[0]}),1)
+    
+    // this.cities.push({name:"wushan",code:"WS"})
     console.log(this.cities)
     // setTimeout(()=> {
     //   this.ref.detectChanges();
@@ -69,8 +70,10 @@ export class InputDemoComponent implements OnInit {
 
   strlistclick () {
     this.strlist.splice(0,1)
+    // this.strlist.push('321312312')
   }
   objlistclick () {
-    this.strlist.splice(0,1)
+    this.objlist.splice(0,1)
+    // this.objlist.push({name:'1xxx'})
   }
 }

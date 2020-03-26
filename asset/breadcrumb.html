@@ -1,0 +1,41 @@
+<document>
+<head>
+<style>
+.breadcrumb ul {
+    display: flex;
+	height: 200px;
+    align-items: center;
+    justify-content: center;
+	font-size: 55;
+}
+    
+.breadcrumb li::after {
+    content: "→";
+	margin-left: 10px;
+	margin-right: 10px;
+}
+    
+.breadcrumb li:last-child::after {
+    content: "";
+}
+ li:hover {
+    color: red;
+}
+ul{
+list-style:none;
+}
+</style>
+</head>
+<body>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+        <li><a href="http://www.baidu.com">Home</a></li>
+        <li><a href="">Category</a></li>
+        <li><a href="">Sub-Category</a></li>
+        <li><span aria-current="page">Product</span></li>
+    </ul>
+</nav>
+</body>
+
+</header>
+</document>
